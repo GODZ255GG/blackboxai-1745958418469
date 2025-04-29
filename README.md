@@ -44,7 +44,7 @@ Here is an overview of the project structure:
 
 ```
 /
-├── Main Page.html          // Main entry point for the web app
+├── index.html          // Main entry point for the web app
 ├── planeacion.html         // Procedure details for Planning
 ├── ingreso.html            // Procedure details for Admission
 ├── permanencia.html        // Procedure details for Continuity
