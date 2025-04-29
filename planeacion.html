@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planeación - Dirección General de Recursos Humanos - UV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #005293;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="Main Page.html">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo_de_la_Universidad_Veracruzana.svg/696px-Logo_de_la_Universidad_Veracruzana.svg.png"
+                      alt="UV Logo"
+                      class="h-12"
+                    />
+                </a>
+                <div class="hidden md:block">
+                    <h1 class="text-xl font-bold text-gray-800">Dirección General de Recursos Humanos</h1>
+                    <p class="text-sm text-gray-600">Universidad Veracruzana</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="Main Page.html" class="nav-link text-gray-700 font-medium hover:text-blue-800">Inicio</a>
+                <a href="#files" class="nav-link text-gray-700 font-medium hover:text-blue-800">Archivos</a>
+                <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-blue-800">Contacto</a>
+            </nav>
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Procedimientos - Planeación</h2>
+        <p class="mb-8 text-gray-600 max-w-3xl">
+            Consulta y descarga los documentos relacionados con los procedimientos de Planeación en la Dirección General de Recursos Humanos.
+        </p>
+
+        <!-- Search and Sort -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 space-y-4 md:space-y-0">
+            <div class="relative w-full md:w-1/3">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Buscar documentos..."
+                  class="w-full border border-gray-300 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <div>
+                <label for="sortSelect" class="mr-2 font-medium text-gray-700">Ordenar por:</label>
+                <select
+                  id="sortSelect"
+                  class="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                >
+                    <option value="name">Nombre</option>
+                    <option value="date">Fecha</option>
+                    <option value="size">Tamaño</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Files Table -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-lg shadow-md" id="filesTable">
+                <thead>
+                    <tr class="bg-blue-600 text-white text-left">
+                        <th class="py-3 px-4 cursor-pointer">Nombre</th>
+                        <th class="py-3 px-4 cursor-pointer">Descripción</th>
+                        <th class="py-3 px-4 cursor-pointer">Fecha</th>
+                        <th class="py-3 px-4 cursor-pointer">Tamaño</th>
+                        <th class="py-3 px-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="filesTbody">
+                    <!-- Sample file rows will be inserted here by JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Necesitas ayuda?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Nuestro equipo está listo para atender tus dudas y brindarte el apoyo que necesitas.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Información de contacto</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Dirección</h4>
+                                <p class="text-gray-600">Av. Xalapa s/n, Col. Obrero Campesina, Xalapa, Ver.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Teléfono</h4>
+                                <p class="text-gray-600">(228) 842-1700 ext. 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Correo electrónico</h4>
+                                <p class="text-gray-600">dgrh@uv.mx</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Horario de atención</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b pb-2">
+                                <span class="font-medium text-gray-700">Lunes a Viernes</span>
+                                <span class="text-gray-600">8:00 - 18:00 hrs</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-2">
+                                <span class="font-medium text-gray-700">Sábados</span>
+                                <span class="text-gray-600">9:00 - 13:00 hrs</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium text-gray-700">Domingos</span>
+                                <span class="text-gray-600">Cerrado</span>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-2">Redes sociales</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white p-3 rounded-full hover:bg-purple-700 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Dirección General de Recursos Humanos</h3>
+                    <p class="text-gray-400">Comprometidos con el desarrollo y bienestar de nuestra comunidad universitaria.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Portal UV</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sistema de nómina</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Formatos y documentos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Políticas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Términos de uso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Accesibilidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Transparencia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo_de_la_Universidad_Veracruzana.svg/696px-Logo_de_la_Universidad_Veracruzana.svg.png"
+                      alt="UV Logo"
+                      class="h-10"
+                    />
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2023 Universidad Veracruzana. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample file data
+        const files = [
+            {
+                name: "Plan Estratégico 2023-2027.pdf",
+                description: "Documento con el plan estratégico de la DGRH para el periodo 2023-2027.",
+                date: "2023-01-15",
+                size: "1.2 MB",
+                url: "https://example.com/files/plan-estrategico-2023-2027.pdf"
+            },
+            {
+                name: "Informe Anual 2022.docx",
+                description: "Informe anual de actividades y resultados del año 2022.",
+                date: "2023-02-10",
+                size: "850 KB",
+                url: "https://example.com/files/informe-anual-2022.docx"
+            },
+            {
+                name: "Presupuesto Planeación.xlsx",
+                description: "Presupuesto asignado para actividades de planeación.",
+                date: "2023-03-05",
+                size: "500 KB",
+                url: "https://example.com/files/presupuesto-planeacion.xlsx"
+            }
+        ];
+
+        // Function to render files in the table
+        function renderFiles(fileList) {
+            const tbody = document.getElementById("filesTbody");
+            tbody.innerHTML = "";
+            fileList.forEach((file, index) => {
+                const tr = document.createElement("tr");
+                tr.className = index % 2 === 0 ? "bg-gray-50" : "bg-white";
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 font-medium text-blue-700">${file.name}</td>
+                    <td class="py-3 px-4 text-gray-700">${file.description}</td>
+                    <td class="py-3 px-4 text-gray-600">${file.date}</td>
+                    <td class="py-3 px-4 text-gray-600">${file.size}</td>
+                    <td class="py-3 px-4 space-x-4">
+                        <button onclick="previewFile('${file.url}')" title="Previsualizar" class="text-blue-600 hover:text-blue-800">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <a href="${file.url}" download class="text-green-600 hover:text-green-800" title="Descargar">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Preview file using Google Docs Viewer in a new tab
+        function previewFile(url) {
+            const encodedUrl = encodeURIComponent(url);
+            const viewerUrl = `https://docs.google.com/gview?url=${encodedUrl}&embedded=true`;
+            window.open(viewerUrl, "_blank", "width=800,height=600");
+        }
+
+        // Search and filter files
+        function filterFiles() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const filtered = files.filter(file =>
+                file.name.toLowerCase().includes(query) ||
+                file.description.toLowerCase().includes(query)
+            );
+            renderFiles(filtered);
+        }
+
+        // Sort files
+        function sortFiles() {
+            const sortBy = document.getElementById("sortSelect").value;
+            const sorted = [...files];
+            sorted.sort((a, b) => {
+                if (sortBy === "name") {
+                    return a.name.localeCompare(b.name);
+                } else if (sortBy === "date") {
+                    return new Date(b.date) - new Date(a.date);
+                } else if (sortBy === "size") {
+                    // Convert size to KB for comparison
+                    const sizeToKB = sizeStr => {
+                        const [value, unit] = sizeStr.split(" ");
+                        if (unit === "MB") return parseFloat(value) * 1024;
+                        return parseFloat(value);
+                    };
+                    return sizeToKB(b.size) - sizeToKB(a.size);
+                }
+                return 0;
+            });
+            renderFiles(sorted);
+        }
+
+        document.getElementById("searchInput").addEventListener("input", filterFiles);
+        document.getElementById("sortSelect").addEventListener("change", sortFiles);
+
+        // Initial render
+        renderFiles(files);
+    </script>
+</body>
+</html>
