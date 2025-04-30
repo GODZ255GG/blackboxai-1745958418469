@@ -1,0 +1,12 @@
+{
+  "name": "blackboxai-1745958418469",
+  "version": "1.0.0",
+  "description": "Node.js project for blackboxai-1745958418469",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
