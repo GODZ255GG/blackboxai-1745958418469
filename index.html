@@ -6,67 +6,7 @@
     <title>Dirección General de Recursos Humanos - UV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 82, 147, 0.8), rgba(0, 82, 147, 0.8)), url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .service-icon:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 82, 147, 0.2);
-        }
-        
-        .floating-btn {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 82, 147, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(0, 82, 147, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 82, 147, 0);
-            }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transition: opacity 0.6s ease-out;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-        }
-        
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #005293;
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -286,35 +226,6 @@
         </div>
     </footer>
 
-    <script>
-        // Scroll animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOnScroll = function() {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.classList.add('visible');
-                    }
-                });
-            };
-            
-            // Initial check
-            fadeInOnScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', fadeInOnScroll);
-            
-            // Mobile menu toggle (would need additional JS for functionality)
-            const mobileMenuButton = document.querySelector('.md\\:hidden');
-            mobileMenuButton.addEventListener('click', function() {
-                // This would toggle a mobile menu in a real implementation
-                console.log('Mobile menu clicked');
-            });
-        });
-    </script>
+    <script src="js/index.js"></script>
 </body>
 </html>
